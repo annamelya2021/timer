@@ -9,7 +9,15 @@
   <body>
     <p><a href="index.html">Go back</a></p>
 
-    <input type="text" id="datetime-picker" />
+    <div class="timer">
+      <p class="clockface js-clockface"></p>
+      <div class="actions">
+        <button class="timer-btn" data-action-start>Start</button>
+        <button class="timer-btn" data-action-stop>Stop</button>
+      </div>
+    </div>
+
+    <!-- <input type="text" id="datetime-picker" />
     <button type="button" data-start>Start</button>
 
     <div class="timer">
@@ -29,7 +37,7 @@
         <span class="value" data-seconds>00</span>
         <span class="label">Seconds</span>
       </div>
-    </div>
+    </div> -->
 
     <script src="js/02-timer.js" type="module"></script>
   </body>
