@@ -48,6 +48,9 @@ const timer = {
       updateClockface(timeComponents);
       //   console.log(`${hours}:${mins}:${secs}`);
     }, 1000);
+
+    refs.startBtn.setAttribute('disabled', false);
+    refs.stopBtn.removeAttribute('disabled');
   },
 
   stop() {
@@ -61,6 +64,8 @@ const timer = {
     updateClockface(time);
     // ontick(time);
     // refs.clockface.textContent = '';
+    refs.stopBtn.setAttribute('disabled', false);
+    refs.startBtn.removeAttribute('disabled');
   },
 };
 //
