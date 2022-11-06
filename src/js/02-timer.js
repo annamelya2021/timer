@@ -22,6 +22,11 @@ const timer = {
   intervalId: null,
   // состояние идентификатора
   isActive: false,
+  init() {
+    const time = getTimeComponents(0);
+    //   перерисовываем интерфейс с ноликами
+    updateClockface(time);
+  },
   start() {
     //   и проверяем если идентификатор активный
     // выходим из функции и ничего не добавляем
@@ -44,13 +49,22 @@ const timer = {
       //   console.log(`${hours}:${mins}:${secs}`);
     }, 1000);
   },
+
   stop() {
     clearInterval(this.intervalId);
     //   когда останавливаем состояние идентификатора меняем на фолс
     this.isActive = false;
+    // вызываем функцию и записыаем ее результат в переменную и передаем ей 0
+    //   для расчета часом минут и секунд
+    const time = getTimeComponents(0);
+    //   перерисовываем интерфейс с ноликами
+    updateClockface(time);
+    // ontick(time);
+    // refs.clockface.textContent = '';
   },
 };
-
+//
+timer.init();
 // timer.start();
 refs.startBtn.addEventListener('click', () => {
   timer.start();
